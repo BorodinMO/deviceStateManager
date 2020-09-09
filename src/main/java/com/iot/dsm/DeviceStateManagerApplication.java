@@ -1,4 +1,4 @@
-package com.iot.poc.deviceStateManager;
+package com.iot.dsm;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

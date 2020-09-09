@@ -1,0 +1,1 @@
+INSERT INTO WASH_MACHINE (status) VALUES ('0');
