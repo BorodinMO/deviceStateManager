@@ -14,8 +14,8 @@ public class DeviceStateManagerExceptionHandler {
     }
 
     @ExceptionHandler(WashMachineBusyException.class)
-    protected ResponseEntity<Object> handleForbiddenException(RuntimeException ex) {
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.FORBIDDEN);
+    protected ResponseEntity<Object> handleBadRequestException(RuntimeException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
 }

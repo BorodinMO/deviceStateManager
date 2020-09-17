@@ -43,7 +43,6 @@ public class WashMachineController {
     public List<WashMachineDto> getWashMachines() {
         return washMachineService.getWashMachines()
                 .stream()
-                .filter(Objects::nonNull)
                 .map(washMachineMapper::toDto)
                 .collect(Collectors.toList());
     }
@@ -52,7 +51,7 @@ public class WashMachineController {
     @ApiOperation("Execute program for specified wash machine.")
     @ApiResponses({
             @ApiResponse(code = 200, message = "Wash machine status changed."),
-            @ApiResponse(code = 403, message = "Wash machine is busy"),
+            @ApiResponse(code = 400, message = "Wash machine is busy"),
             @ApiResponse(code = 404, message = "Wash machine was not found.")
     })
     public WashMachineDto startProgram(@PathVariable Long id, @RequestBody WashMachineProgramRequestDto request) {
